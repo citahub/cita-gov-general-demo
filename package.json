@@ -6,7 +6,8 @@
   "author": "Keith <keithwhisper@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./deploy.js"
+    "start": "nodemon ./deploy.js",
+    "deploy": "cd ./contracts && solcjs PermsMng.sol Entry.sol --abi && solcjs PermsMng.sol Entry.sol --bin && yarn start"
   },
   "dependencies": {
     "@appchain/base": "^0.19.1"
