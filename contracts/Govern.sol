@@ -3,19 +3,19 @@ pragma solidity ^0.4.24;
 import "./Entry.sol";
 
 contract Govern {
-    
+
     address public supervisor;
     address public executor;
 
     Entry entryCtr;
     event SupervisorUpdated(address indexed from, address indexed to);
     event ExecutorUpdated(address indexed from, address indexed to, address indexed supervisor);
-    
+
     modifier onlySupervisor {
         require(msg.sender == supervisor, "Supervisor required");
         _;
     }
-    
+
     modifier onlyExecutor {
         require(msg.sender == executor, "Executor required");
         _;
@@ -26,7 +26,7 @@ contract Govern {
         executor = _executor;
         entryCtr = Entry(entryAddr);
     }
-    
+
     function setSupervisor(address _supervisor) external onlySupervisor {
         address _old = supervisor;
         supervisor = _supervisor;
