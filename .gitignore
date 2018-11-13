@@ -1,0 +1,7 @@
+.vscode
+*.bin
+*.abi
+_*.sol
+*.js
+node_modules
+addr

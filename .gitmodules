@@ -1,0 +1,3 @@
+[submodule "cita-sys-interface"]
+	path = cita-sys-interface
+	url = https://github.com/cryptape/cita-sys-interface
