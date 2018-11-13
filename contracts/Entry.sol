@@ -1,4 +1,4 @@
-pragma solidity 0.4.25;
+pragma solidity ^0.4.24;
 
 import "./PermsMng.sol";
 
@@ -19,7 +19,7 @@ contract Entry {
         _;
     }
 
-    constructor(address _permsMng) public { 
+    constructor(address _permsMng) public {
         admin = msg.sender;
         permsMng = _permsMng;
         // permsMng = new PermsMng();
@@ -32,8 +32,8 @@ contract Entry {
     }
 
     function setAdmin(address newAdmin)
-        external 
-        onlyAdmin 
+        external
+        onlyAdmin
     {
         address prev = admin;
         admin = newAdmin;

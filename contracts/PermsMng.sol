@@ -1,12 +1,12 @@
-pragma solidity 0.4.25;
+pragma solidity ^0.4.24;
 
 contract PermsMng {
     // owner from entry contract
     address owner;
     // perm addresses
-    address[33] public perms;
+    address[] public perms;
     // perm owner addresses
-    address[33] public governs;
+    address[] public governs;
 
     event GovernUpdated(uint id, address prevGovern, address newGovern);
 
@@ -19,7 +19,8 @@ contract PermsMng {
 
     constructor() public {
         owner = msg.sender;
-        perms = [
+        // TODO you can split permsInline as storage of an independent file.
+        address[33] memory permsInline = [
             0xfFFFffFfFFffFFFffFFffFfffFFffffFFF020001, //0 approve node
             0xfFFFffFfFFffFFFffFFffFfffFFffffFFF020001, //1 delete node
             0xfFFFffFfFFffFFFffFFffFfffFFffffFFF020001, //2 set stake
@@ -62,21 +63,22 @@ contract PermsMng {
             // version manager
             0xFffFFFfffffFFfFFFFFffffFFfFfFfffFf020011 //32 set version
         ];
-        for (uint i = 0; i < perms.length; i++) {
+        for (uint i = 0; i < permsInline.length; i++) {
             governs[i] = owner;
+            perms[i] = permsInline[i];
         }
     }
 
     function setGovern(uint id, address newGovern)
-        external 
-        onlyOwner 
+        external
+        onlyOwner
     {
         address prev = governs[id];
         governs[id] = newGovern;
         emit GovernUpdated(id, prev, newGovern);
     }
 
-    function setPerm(uint id, address newPerm) 
+    function setPerm(uint id, address newPerm)
         external
         onlyOwner
     {
