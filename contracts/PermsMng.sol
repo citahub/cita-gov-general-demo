@@ -64,8 +64,8 @@ contract PermsMng {
             0xFffFFFfffffFFfFFFFFffffFFfFfFfffFf020011 //32 set version
         ];
         for (uint i = 0; i < permsInline.length; i++) {
-            governs[i] = owner;
-            perms[i] = permsInline[i];
+            governs.push(owner);
+            perms.push(permsInline[i]);
         }
     }
 
