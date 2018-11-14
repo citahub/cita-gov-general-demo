@@ -1,0 +1,22 @@
+sudo: required
+services:
+  - docker
+language: node_js
+node_js: '10'
+cache:
+  directories:
+    - node_modules
+env:
+  - CITA=cita_secp256k1_sha3
+
+before_install:
+  - wget https://github.com/cryptape/cita/releases/download/v0.20/$CITA.tar.gz
+  - tar -zxvf $CITA.tar.gz
+  - cd ./$CITA
+  - ls -l
+  - ./env.sh ./scripts/create_cita_config.py create --super_admin $SU_PK --nodes "127.0.0.1:4000,127.0.0.1:4001,127.0.0.1:4002,127.0.0.1:4003"
+
+install:
+  - npm install
+
+script: npm test
