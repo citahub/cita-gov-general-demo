@@ -1,0 +1,78 @@
+init_perm_addrs:
+  - approveNode: 0xffffffffffffffffffffffffffffffffff021020
+  - deleteNode: 0xffffffffffffffffffffffffffffffffff021021
+  - setStake: 0xffffffffffffffffffffffffffffffffff021022
+  - newPermission: 0xffffffffffffffffffffffffffffffffff021010
+  - deletePermission: 0xffffffffffffffffffffffffffffffffff021011
+  - updatePermissionName: 0xffffffffffffffffffffffffffffffffff021012
+  - addResources: 0xffffffffffffffffffffffffffffffffff021012
+  - deleteResources: 0xffffffffffffffffffffffffffffffffff021012
+  - setAuthorizations: 0xffffffffffffffffffffffffffffffffff021013
+  - setAuthorization: 0xffffffffffffffffffffffffffffffffff021013
+  - cancelAuthorizations: 0xffffffffffffffffffffffffffffffffff021014
+  - cancelAuthorization: 0xffffffffffffffffffffffffffffffffff021014
+  - clearAuthorization: 0xffffffffffffffffffffffffffffffffff021014
+  - newRole: 0xffffffffffffffffffffffffffffffffff021015
+  - deleteRole: 0xffffffffffffffffffffffffffffffffff021016
+  - updateRoleName: 0xffffffffffffffffffffffffffffffffff021017
+  - addPermissions: 0xffffffffffffffffffffffffffffffffff021017
+  - deletePermissions: 0xffffffffffffffffffffffffffffffffff021017
+  - setRole: 0xffffffffffffffffffffffffffffffffff021018
+  - cancelRole: 0xffffffffffffffffffffffffffffffffff021019
+  - clearRole: 0xffffffffffffffffffffffffffffffffff021019
+  - newGroup: 0xffffffffffffffffffffffffffffffffff02101a
+  - deleteGroup: 0xffffffffffffffffffffffffffffffffff02101b
+  - updateGroupName: 0xffffffffffffffffffffffffffffffffff02101c
+  - addAccounts: 0xffffffffffffffffffffffffffffffffff02101c
+  - deleteAccounts: 0xffffffffffffffffffffffffffffffffff02101c
+  - setBQL: 0xffffffffffffffffffffffffffffffffff021024
+  - setDefaultAQL: 0xffffffffffffffffffffffffffffffffff021023
+  - setAQL: 0xffffffffffffffffffffffffffffffffff021023
+  - setQuotaPrice: 0xffffffffffffffffffffffffffffffffff021027
+  - multiTxs: 0xffffffffffffffffffffffffffffffffff021025
+  - setState: 0xffffffffffffffffffffffffffffffffff021026
+  - setVersion: 0xffffffffffffffffffffffffffffffffff021028
+
+system_contracts:
+  - node_manager: 0xfFFFffFfFFffFFFffFFffFfffFFffffFFF020001 # addr
+    - approveNode: 0xdd4c97a0
+    - deleteNode: 0x2d4ede93
+    - setStake: 0x51222d50
+  - permission_management: 0xffFffFffFFffFFFFFfFfFFfFFFFfffFFff020004 # addr
+    - newPermission: 0xfc4a089c
+    - deletePermission: 0x98a05bb1
+    - updatePermissionName: 0x537bf9a3
+    - addResources: 0xf036ed56
+    - deleteResources: 0x6446ebd8
+    - setAuthorizations: 0x52c5b4cc
+    - setAuthorization: 0x0f5aa9f3
+    - cancelAuthorizations: 0xba00ab60
+    - cancelAuthorization: 0x3482e0c9
+    - clearAuthorization: 0xa5925b5b
+  - role_management: 0xFFFFfFfFFFFFFfFfffFfffffffFffFFffF020007 # addr
+    - newRole: 0x551ef860
+    - deleteRole: 0x54b025c5
+    - updateRoleName: 0xd9c090a0
+    - addPermissions: 0x0773e6ba
+    - deletePermissions: 0x17b2e350
+    - setRole: 0xa32710eb
+    - cancelRole: 0xa8319481
+    - clearRole: 0xc631e758
+  - group_management: 0xFFFffFFfffffFFfffFFffffFFFffFfFffF02000a # addr
+    - newGroup: 0xd7cd7209
+    - deleteGroup: 0xbaeb8cad
+    - updateGroupName: 0x7eafcdb1
+    - addAccounts: 0x2c84e31f
+    - deleteAccounts: 0xd86df333
+  - quota_manager: 0xffffffffFfFffffffffffffffFfFffFfff020003 # addr
+    - setBQL: 0x931cd0cc
+    - setDefaultAQL: 0xb107ea12
+    - setAQL: 0x5da7b59f
+  - price_manager: 0xfffFfFFfFFffFFFffFFFffFfFfffFfFfff020010 # addr
+    - setQuotaPrice: 0x52da800a
+  - batch_tx: 0xFFfFffffffFFffffFfFFffFFfFFFfFffFf02000e # addr
+    - multiTxs: 0x82cc3327
+  - emergency_brake: 0xFffffFffFFFFfFFFFfFffFFFFFfFfFFfFF02000f # addr
+    - setState: 0xac9f0222
+  - version_manage: 0xFffFFFfffffFFfFFFFFffffFFfFfFfffFf020011
+    - setVersion: 0x62ddb8e1
