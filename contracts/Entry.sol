@@ -63,7 +63,6 @@ contract Entry {
         require(msg.sender == govern, "Specified Govern Required");
         assembly {
             let ptr := mload(40)
-            // mstore(ptr, calldataload(0x64))
             calldatacopy(ptr, 0x64, sub(calldatasize, 0x64))
             switch call(gas, ctrAddr, 0, ptr, sub(calldatasize, 0x64), ptr, 0)
             case 0 { revert(0, 0) }
