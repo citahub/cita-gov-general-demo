@@ -1,0 +1,24 @@
+{
+  "name": "gov-contract-test",
+  "version": "0.1.0",
+  "description": "CITA gov general demo contract test using cita-sdk-js",
+  "main": "",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2"
+  },
+  "scripts": {
+    "lint": "eslint test",
+    "lint-fix": "eslint --fix test"
+  },
+  "repository": {},
+  "author": "Cryptape Technologies <contact@cryptape.com>",
+  "license": "Apache 2.0",
+  "dependencies": {
+    "@cryptape/cita-sdk": "^0.25.1",
+    "chai": "^4.2.0",
+    "log4js": "^4.1.0",
+    "mocha": "^6.1.4"
+  }
+}

@@ -1,3 +1,6 @@
 .vscode
 *.bin
 *.abi
+# node
+**/node_modules
+yarn-error.log
