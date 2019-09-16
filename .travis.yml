@@ -1,0 +1,29 @@
+sudo: required
+services:
+  - docker
+language: node_js
+node_js:
+  - lts/*
+cache:
+  directories:
+    - node_modules
+env:
+  - CITA=cita_secp256k1_sha3
+
+before_install:
+  - wget https://github.com/cryptape/cita/releases/download/v1.0.0/$CITA.tar.gz
+  - tar -zxvf $CITA.tar.gz
+  - cd ./$CITA
+  - bin/cita create 
+      --super_admin "0x4b5ae4567ad5d9fb92bc9afd6a657e6fa13a2523"
+      --nodes "127.0.0.1:4000"
+  - bin/cita setup test-chain/0
+  - bin/cita start test-chain/0
+
+install:
+  - cd $TRAVIS_BUILD_DIR/tests
+  - travis_retry yarn install
+
+script:
+  - cd $TRAVIS_BUILD_DIR/tests
+  - npm run-script lint 
