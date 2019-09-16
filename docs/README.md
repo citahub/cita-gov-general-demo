@@ -1,5 +1,8 @@
 On-chain governance entry contract
 ========================
+
+[![Travis CI]](https://travis-ci.com/cryptape/cita-gov-general-demo)
+
 Overview
 -------------
 On-chain governance entry contract transfer the SuperAdmin account permissions to the on-chain governance entry contract to achieve decentralized governance.
@@ -158,5 +161,4 @@ The following is a list of SuperAdmin permissions that can be replaced at presen
 0xFffFFFfffffFFfFFFFFffffFFfFfFfffFf020011 //32 set version
 ```
 
-
-
+[Travis CI]: https://travis-ci.com/cryptape/cita-gov-general-demo.svg?branch=develop
