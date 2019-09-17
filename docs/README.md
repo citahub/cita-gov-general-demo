@@ -7,7 +7,7 @@ Overview
 -------------
 On-chain governance entry contract transfer the SuperAdmin account permissions to the on-chain governance entry contract to achieve decentralized governance.
 
-![](https://raw.githubusercontent.com/cryptape/appchain-gov-general/develop/docs/contract.png)
+<img src="contract.png?raw=true" width="512">
 
 PermsMng_Contract
 -------------
