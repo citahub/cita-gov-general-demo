@@ -26,4 +26,4 @@ install:
 
 script:
   - cd $TRAVIS_BUILD_DIR/tests
-  - npm run-script lint 
+  - npm run-script lint && npm test
