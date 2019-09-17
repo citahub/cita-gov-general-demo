@@ -13,7 +13,7 @@ contract PermsMng {
     event PermUpdated(uint id, address prevPerm, address newPerm);
 
     modifier onlyOwner {
-        require(msg.sender == owner);
+        require(msg.sender == owner, "Not the owner");
         _;
     }
 

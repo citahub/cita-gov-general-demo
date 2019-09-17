@@ -61,6 +61,7 @@ contract Entry {
         address ctrAddr = p.perms(id);
         address govern = p.governs(id);
         require(msg.sender == govern, "Specified Govern Required");
+        // solium-disable-next-line security/no-inline-assembly
         assembly {
             let ptr := mload(40)
             calldatacopy(ptr, 0x64, sub(calldatasize, 0x64))
