@@ -10,7 +10,9 @@ const {
 const {
   genCont, setGovern, setPerm, perms, governs,
 } = admin;
-const { superAdmin, permsMngBin, testSender } = config;
+const {
+  superAdmin, permsMngBin, testSender, permsInline,
+} = config;
 
 // temp
 let hash;
@@ -33,13 +35,13 @@ describe('\n\n Test PermsMng contract \n\n', () => {
   it('should have built-in perms', async () => {
     const res = await perms(0);
     logger.debug('\nthe perms: 0 index:\n', res);
-    expect(res).to.equal(superAdmin.address);
+    expect(res).to.equal(permsInline[0]);
   });
 
   it('should have built-in governs', async () => {
     const res = await governs(0);
     logger.debug('\nthe governs: 0 index:\n', res);
-    expect(res).to.equal(permsMngBin[0]);
+    expect(res).to.equal(superAdmin.address);
   });
 
   it('should send a tx: setGovern', async () => {

@@ -23,7 +23,9 @@ before_install:
 install:
   - cd $TRAVIS_BUILD_DIR/tests
   - travis_retry yarn install
+  - npm install -g ethlint
 
 script:
-  - cd $TRAVIS_BUILD_DIR/tests
-  - npm run-script lint 
+  # Use jobs and stages.
+  - cd $TRAVIS_BUILD_DIR && solium -d contracts
+  - cd $TRAVIS_BUILD_DIR/tests && npm run-script lint && npm test

@@ -9,6 +9,7 @@
     "eslint-plugin-import": "^2.17.2"
   },
   "scripts": {
+    "test": "mocha test/perms_mng.js -t 20s --exit",
     "lint": "eslint test",
     "lint-fix": "eslint --fix test"
   },
