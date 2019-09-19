@@ -70,5 +70,15 @@ describe('\n\n Test PermsMng contract \n\n', () => {
     expect(res.errorMessage).to.be.null;
   });
 
-  // TODO Add query expect.
+  it('should have new perm', async () => {
+    const res = await perms(0);
+    logger.debug('\nthe perms: 0 index:\n', res);
+    expect(res).to.equal(testSender.address);
+  });
+
+  it('should have new govern', async () => {
+    const res = await governs(33);
+    logger.debug('\nthe governs: 0 index:\n', res);
+    expect(res).to.equal(testSender.address);
+  });
 });
