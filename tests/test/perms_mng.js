@@ -77,7 +77,7 @@ describe('\n\n Test PermsMng contract \n\n', () => {
   });
 
   it('should have new govern', async () => {
-    const res = await governs(33);
+    const res = await governs(0);
     logger.debug('\nthe governs: 0 index:\n', res);
     expect(res).to.equal(testSender.address);
   });
